@@ -23,10 +23,13 @@ const UnitComponent = ({ id, image, name, rating, area, price, location }) => {
             <div className="flex items-center justify-between h-full cursor-pointer">
                 <div className="flex flex-col">
                     <h1>Price</h1>
-                    <h1>{price}</h1>
+                    <h1>{price} /month</h1>
                 </div>
-                <ChevronRightIcon className="h-8 bg-[#FE9E16] text-white ml-10" />
             </div>
+
+            <button className="">
+                <ChevronRightIcon className="h-8 bg-[#FE9E16] text-white ml-10" />
+            </button>
         </div>
     )
 }

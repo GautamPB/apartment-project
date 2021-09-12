@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import UnitComponent from '../components/UnitComponent'
+import { units } from '../utils/data'
 
 export default function Home() {
     return (
@@ -11,7 +12,7 @@ export default function Home() {
 
             <div className="m-10">
                 <Header />
-                <UnitComponent
+                {/* <UnitComponent
                     id="1"
                     image="https://im.proptiger.com/1/3077929/6/ananda-elevation-109628867.jpeg"
                     name="Berlin Apartment"
@@ -29,7 +30,21 @@ export default function Home() {
                     location="Kalyanagar 308 Kalyanagar"
                     price="$16.00 /Month"
                     area="1m - 15m"
-                />
+                /> */}
+
+                <div>
+                    {units.map((unit) => (
+                        <UnitComponent
+                            key={unit.id}
+                            image={unit.image}
+                            name={unit.name}
+                            rating={unit.rating}
+                            location={unit.location}
+                            price={unit.price}
+                            area={unit.area}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )
